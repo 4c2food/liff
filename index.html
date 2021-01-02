@@ -129,7 +129,6 @@
       document.getElementById("version").append(liff.getVersion())
       document.getElementById("accessToken").append(liff.getAccessToken())
       document.getElementById("isInClient").append(liff.isInClient())
-
       if (liff.isInClient()) {
         document.getElementsById("btnLogOut").style.display = "none"
       } else {
@@ -140,18 +139,19 @@
     }
 
     async function main() {
-      await liff.init({ liffId: "1655534624-l9DJvPXm" })
-      document.getElementsById("isLoggedIn").append(liff.isLoggedIn())
-      if (liff.isLoggedIn()) {
+      liff.ready.then() => {
+        document.getElementsById("isLoggedIn").append(liff.isLoggedIn())
+        if (liff.isLoggedIn()) {
         getEnvironment()
         getUserProfile()
         getContext()
         getFriendship()
-        createUniversalLink()      
-      } else {
+        createUniversalLink()    
+         } else {
         //liff.login()
+        }  
       }
-
+      await liff.init({ liffId: "1655534624-l9DJvPXm" })
     }
     main()
   </script>
