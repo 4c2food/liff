@@ -1,32 +1,20 @@
 <!DOCTYPE html>
-<HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>Producer</title>
+  <link rel="stylesheet" href="css/style.css" media="all"> -->
+</head>
 
-<HEAD>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-<title>Producer</title>
-<link rel="stylesheet" href="css/style.css" media="all"> -->
-</HEAD>
+<body>
+<img id="pictureUrl">
+<p id="userId"><b>userId: </b> </p>
+<p id="displayName"><b>displayName: </b> </p>
 
-<BODY BGCOLOR=PINK>
-
-<CENTER><H1>ข้อมูลส่วนตัว1</H1>
-<IMG SRC=ชื่อไฟล์เส้นคั่น.นามสกุล></CENTER>
-<IMG SRC=ชื่อไฟล์รูปภาพตัวเอง.นามสกุล>
-
-<H2>
-<BR> ชื่อ : นางสาว นัทธมน ภู่ศรีสลับ
-<BR> รหัสนักศึกษา : 60010528
-<BR> ชื่อเล่น : นัท
-
-<CENTER><H3>ข้อมูลส่วนตัว1</H3>
-<IMG SRC=ชื่อไฟล์เส้นคั่น.นามสกุล></CENTER>
-<IMG SRC=ชื่อไฟล์รูปภาพตัวเอง.นามสกุล>
-
-<H4>
-<BR> ชื่อ : นายธนพล ตั๊นระกูล
-<BR> รหัสนักศึกษา : 60010392
-<BR> ชื่อเล่น : วิน
+<img id="pictureUrl">
+<p id="userId"><b>userId:</b> </p>
+<p id="displayName"><b>displayName:</b> </p>
 
 <button id="btnClose" onclick="closed()">Close</button>
 
@@ -34,8 +22,21 @@
 <script>
 function closed() 
     { liff.closeWindow () }
-</script>
-liff.init({ liffId: "1655534624-l9DJvPXm" }
 
-</BODY>
-</HTML>
+function getEnvironment() {
+    document.getElementById("pictureUrl").src = profile.pictureUrl
+    document.getElementById("userId").append("60010528")
+    document.getElementById("displayName").append("Natthamon")
+
+    document.getElementById("pictureUrl").src = profile.pictureUrl
+    document.getElementById("userId").append(profile.userId)
+    document.getElementById("displayName").append(profile.displayName)
+
+async function main() 
+    { await liff.init({ liffId: "1655534624-l9DJvPXm" })
+        getUserProfile()
+    }
+    main()
+</script>
+</body>
+</html>
