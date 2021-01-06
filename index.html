@@ -9,8 +9,9 @@
 </head>
 <body>
   <img id="pictureUrl">
+  <p id="displayName"><b>displayName:</b> </p>  
   <p id="userId"><b>userId:</b> </p>
-  <p id="displayName"><b>displayName:</b> </p>
+
 
   <button id="btnClose" onclick="closed()">Close</button>
 
@@ -25,7 +26,7 @@
       const profile  = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
       document.getElementById("userId").append("60010528")
-      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("displayName").append("Natthamon Phusrisalap")
     }
 
     function getEnvironment() {
