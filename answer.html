@@ -28,7 +28,8 @@
   </font>
   <hr>
   <hr>
-  <button id="btnClose" onclick="closed()">Close</button>
+  
+  <button id="btnClose" onclick="liff.closeWindow()">Close</button>
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
   <script>
@@ -41,8 +42,8 @@
   //   // document.getElementById("ID").append("60010528")
   //   }
 
-  function closed() 
-    { liff.closeWindow()}
+  // function closed() 
+  //   { liff.closeWindow()}
 
   function getEnvironment() {
     document.getElementById("btnClose").style.display = "none"
@@ -53,7 +54,6 @@
         getEnvironment()
   }
   await liff.init({ liffId: "YOUR-LIFF-ID" })
-    
     main()
   </script>
 </body>
