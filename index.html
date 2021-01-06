@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-  <title>organizer</title>
+  <title>Organizer</title>
   <link rel="stylesheet" href="css/style.css" media="all"> --
 
 </head>
@@ -21,6 +21,13 @@
       liff.closeWindow ()
     }
 
+    function openWindow() {
+      liff.openWindow({
+        url: "https://line.me",
+        external: true
+      })
+    }
+
     async function getUserProfile() {
       const profile  = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
@@ -36,6 +43,7 @@
       await liff.init({ liffId: "1655534624-l9DJvPXm" })
         getEnvironment()
         getUserProfile()
+
     } 
     main()
   </script>
