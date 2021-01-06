@@ -9,8 +9,8 @@
 </head>
 <body>
   <img id="pictureUrl">
-  <p id="displayName"><b>displayName:</b> </p>  
-  <p id="userId"><b>userId:</b> </p>
+  <p id="displayName"><b>Name :</b> </p>  
+  <p id="userId"><b>Id :</b> </p>
 
 
   <button id="btnClose" onclick="closed()">Close</button>
@@ -25,8 +25,8 @@
     async function getUserProfile() {
       const profile  = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("displayName").append("Natthamon Phusrisalap")      
       document.getElementById("userId").append("60010528")
-      document.getElementById("displayName").append("Natthamon Phusrisalap")
     }
 
     function getEnvironment() {
@@ -35,9 +35,8 @@
 
     async function main() {
       await liff.init({ liffId: "1655534624-l9DJvPXm" })
-        getEnvironment()
         getUserProfile()
-
+        getEnvironment()
     } 
     main()
   </script>
