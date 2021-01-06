@@ -9,7 +9,6 @@
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
 
   <button id="btnClose" onclick="closed()">Close</button>
 
@@ -22,19 +21,18 @@
   <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
   <script>
     
-    function closed() {
-      liff.closeWindow()
-    }
+  function closed() 
+    { liff.closeWindow()}
 
-    async function getUserProfile() {
-      const profile = await liff.getProfile()
-      document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("userId").append(profile.userId)
-      document.getElementById("displayName").append(profile.displayName)
+  async function getUserProfile() {
+    const profile = await liff.getProfile()
+    document.getElementById("pictureUrl").src = profile.pictureUrl
+    document.getElementById("userId").append(profile.userId)
+    document.getElementById("displayName").append(profile.displayName)
     }
     
-    function getEnvironment() {
-        document.getElementById("btnClose").style.display = "none"
+  function getEnvironment() {
+    document.getElementById("btnClose").style.display = "none"
     }
 
     async function main() {
