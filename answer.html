@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <title>My LIFF App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <img id="pictureUrl">
+  <p id="userId"><b>userId:</b> </p>
+  <p id="displayName"><b>displayName:</b> </p>
+  <p><a href="liff/path/?param=9">Link to Path</a></p>
+
+  <button id="btnClose" onclick="closed()">Close</button>
+
+  <script src="js/vconsole.min.js"></script>
+  <script>
+    var vConsole = new VConsole()
+    console.log("Hello World!")
+  </script>
+
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
+  <script>
+    
+    function closed() {
+      liff.closeWindow()
+    }
+
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("userId").append(profile.userId)
+      document.getElementById("displayName").append(profile.displayName)
+    }
+    
+    function getEnvironment() {
+        document.getElementById("btnClose").style.display = "none"
+    }
+
+    async function main() {
+          getEnvironment()
+          getUserProfile()
+      }
+      await liff.init({ liffId: "YOUR-LIFF-ID" })
+    
+    main()
+  </script>
+</body>
+</html>
