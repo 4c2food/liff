@@ -9,7 +9,7 @@
 </head>
 <body>
   <img id="pictureUrl">
-  <!-- <img SRC="img.jpg" width="50"  height="50" > -->
+  <img SRC="img.jpg" width="50"  height="50" >
   <p id="Name"><b>Name : </b> </p>  
   <p id="ID"><b>Id :</b> </p>
 
@@ -19,16 +19,16 @@
   <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
   <script>
 
-    function closed() {
-      liff.closeWindow ()
-    }
-
     async function getUserProfile() {
       const profile  = await liff.getProfile()
-      // document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("pictureUrl").src = img.jpg
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      // document.getElementById("pictureUrl").src = img.jpg
       document.getElementById("Name").append("Natthamon Phusrisalap")      
       document.getElementById("ID").append("60010528")
+    }
+
+    function closed() {
+      liff.closeWindow ()
     }
 
     function getEnvironment() {
