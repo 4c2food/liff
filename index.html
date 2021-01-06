@@ -32,7 +32,7 @@
   <hr>
   <hr>
 
-  <button id="btnClose" onclick="liff.closeWindow()">Close</button>
+  <button type="btnClose" onclick="liff.closeWindow()">Close</button>
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.6.0/sdk.js"></script>
   <script>
@@ -49,16 +49,16 @@
     //   liff.closeWindow ()
     // }
 
-    function getEnvironment() {
-        document.getElementById("btnClose").style.display = "none"
-    }
+    // function getEnvironment() {
+    //     document.getElementById("btnClose").style.display = "none"
+    // }
 
-    async function main() {
-      await liff.init({ liffId: "1655534624-l9DJvPXm" })
-        //getUserProfile()
-        getEnvironment()
-    } 
-    main()
+    // async function main() {
+    //   await liff.init({ liffId: "1655534624-l9DJvPXm" })
+    //     //getUserProfile()
+    //     getEnvironment()
+    // } 
+    // main()
   </script>
 </body>
 </html>
