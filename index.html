@@ -21,17 +21,10 @@
       liff.closeWindow ()
     }
 
-    function openWindow() {
-      liff.openWindow({
-        url: "https://line.me",
-        external: true
-      })
-    }
-
     async function getUserProfile() {
       const profile  = await liff.getProfile()
       document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("userId").append(profile.userId)
+      document.getElementById("userId").append("60010528")
       document.getElementById("displayName").append(profile.displayName)
     }
 
